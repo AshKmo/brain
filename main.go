@@ -114,7 +114,7 @@ func (nn NeuralNet) Train(dataset [][][]float64, wildness float64) float64 {
 			newDifferences := make([]float64, len(nn.weights[layer][0]))
 
 			for node := 0; node < len(nn.biases[layer]); node++ {
-				dcdz := nn.dsquisher(rawActivations[layer][node]) * 2 * differences[node] * wildness
+				dcdz := nn.dsquisher(rawActivations[layer][node]) * differences[node] * wildness
 
 				totalBiasAdjustments[layer][node] += dcdz
 
