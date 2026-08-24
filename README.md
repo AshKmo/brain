@@ -12,6 +12,6 @@ A NeuralNet represents a neural network. A new NeuralNet can be conveniently cre
 
 A NeuralNet can be manipulated by the following functions:
 #### `(nn NeuralNet) Feed(inputs ...float64) ([][]float64, []float64)`
-Accepts a series of input values and produces the raw and final activations (respectively) of the output layer of the network when fed these inputs.
+Accepts a series of input values and produces the raw activations of each neuron in the whole network, plus the final ("squished") activations of the output layer, when the network is fed these inputs.
 #### `(nn) NeuralNet Train(dataset [][][]float64, wildness float64) float64`
 Accepts a list whose elements are each a pair of lists containing the input and output values (respectively) upon which the neural network is to be trained. Also accepts a "wildness" value dictating the coefficient of the magnitude of the amount of change to be made to the model at each backpropagation step.
